@@ -1,7 +1,8 @@
 <<<<<<< HEAD
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
-
+debug
+release
 *~
 *.autosave
 *.a
