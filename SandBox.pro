@@ -8,5 +8,6 @@ SOURCES += main.cpp
 LIBS += -lSDL2 -lSDL2main
 
 HEADERS += \
-    data_structures.h
+    data_structures.h \
+    ui.h
 
