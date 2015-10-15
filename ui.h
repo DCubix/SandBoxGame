@@ -91,29 +91,29 @@ void sb_gui_finish() {
 }
 
 bool sb_button(int id, int x, int y, char* text, SB_COLOR col, int stype=1, int mytype=1) {
-    if (sb_region_hit(x, y, 64, 22)) {
+    if (sb_region_hit(x, y, 50, 22)) {
         uistate.hotitem = id;
         if (uistate.activeitem == 0 && uistate.lmb)
             uistate.activeitem = id;
     }
 
-    sb_drawrect(x, y+2, 64, 22, 0, 0, 0);
+    sb_drawrect(x, y+2, 50, 22, 0, 0, 0);
     if (uistate.hotitem == id) {
         if (uistate.activeitem == id) {
-            sb_drawrect(x, y+1, 64, 22, col.r+20, col.g+20, col.b+20);
+            sb_drawrect(x, y+1, 50, 22, col.r+20, col.g+20, col.b+20);
         } else {
-            sb_drawrect(x, y, 64, 22, col.r+20, col.g+20, col.b+20);
+            sb_drawrect(x, y, 50, 22, col.r+20, col.g+20, col.b+20);
         }
     } else {
-        sb_drawrect(x, y, 64, 22, col.r, col.g, col.b);
+        sb_drawrect(x, y, 50, 22, col.r, col.g, col.b);
     }
     int tw = strlen(text) * 11;
-    int tx = 32-tw/2;
+    int tx = 25-tw/2;
     int sely = 0;
 
     sb_drawtext((SDL_Texture*)uistate.font, x+tx, y+2, text);
     if (stype == mytype)
-        sb_drawrect(x, y, 64, 22, 255, 0, 0, false);
+        sb_drawrect(x, y, 50, 22, 255, 0, 0, false);
     if (uistate.lmb == 0 &&
         uistate.hotitem == id &&
         uistate.activeitem == id)

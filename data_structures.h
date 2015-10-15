@@ -20,8 +20,19 @@ enum SB_TYPE {
     SB_TYPE_SAND = 1,
     SB_TYPE_WATER = 2,
     SB_TYPE_METAL = 3,
-    SB_TYPE_FIRE = 4,
-    SB_TYPE_STEAM = 5
+    SB_TYPE_WALL = 4,
+    SB_TYPE_FIRE = 5
+};
+
+enum SB_DIRECTION {
+    SB_DIR_UP = 0x001a,
+    SB_DIR_DOWN = 0x002b,
+    SB_DIR_LEFT = 0x003c,
+    SB_DIR_RIGHT = 0x004d,
+    SB_DIR_UP_RIGHT = (SB_DIR_UP | SB_DIR_RIGHT),
+    SB_DIR_UP_LEFT = (SB_DIR_UP | SB_DIR_LEFT),
+    SB_DIR_DOWN_RIGHT = (SB_DIR_DOWN | SB_DIR_RIGHT),
+    SB_DIR_DOWN_LEFT = (SB_DIR_DOWN | SB_DIR_LEFT)
 };
 
 struct SB_COLOR {
@@ -39,15 +50,6 @@ struct SB_COLOR {
 
 struct SB_POINT {
     int x, y;
-};
-
-struct SB_PARTICLE {
-    int type=1;
-    float temp=20.0f;
-    float max_temp=2000.0f;
-    float min_temp=-100.0f;
-    bool fluid=false;
-    bool gas=false;
 };
 
 struct SB_UI {
